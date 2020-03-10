@@ -1,0 +1,18 @@
+Package: openwater
+Type: Package
+Title: R Bindings to the OpenWater API
+Version: 0.1.0
+Authors@R: 
+    person(given = "Matthew",
+           family = "Schuelke",
+           role = c("aut", "cre"),
+           email = "matthew.schuelke@slu.edu",
+           comment = c(ORCID = "0000-0001-5755-1725"))
+Description: This package provides the R bindings for OpenWater
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    rapiclient,
+    httr,
+    readr
