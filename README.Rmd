@@ -50,7 +50,7 @@ sticker(subplot = "man/figures/openwater_logo.png",
 
 <!-- badges: start -->
 [![Under Development](https://img.shields.io/badge/status-under%20development-red.svg)](https://github.com/Saint-Louis-University/openwater)
-[![Last Commit](https://img.shields.io/github/last-commit/Saint-Louis-University/fac180.svg)](https://github.com/Saint-Louis-University/openwater/commits/master)
+[![Last Commit](https://img.shields.io/github/last-commit/Saint-Louis-University/openwater.svg)](https://github.com/Saint-Louis-University/openwater/commits/master)
 <!-- badges: end -->
 
 ## Overview
