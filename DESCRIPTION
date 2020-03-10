@@ -16,3 +16,5 @@ Imports:
     rapiclient,
     httr,
     readr
+URL: https://github.com/Saint-Louis-University/openwater
+BugReports: https://github.com/Saint-Louis-University/openwater/issues
