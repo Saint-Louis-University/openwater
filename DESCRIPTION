@@ -8,13 +8,15 @@ Authors@R:
            role = c("aut", "cre"),
            email = "matthew.schuelke@slu.edu",
            comment = c(ORCID = "0000-0001-5755-1725"))
-Description: This package provides the R bindings for OpenWater
+Description: This package provides the R bindings for OpenWater.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Imports: 
     rapiclient,
     httr,
-    readr
+    readr,
+    magrittr
 URL: https://github.com/Saint-Louis-University/openwater
 BugReports: https://github.com/Saint-Louis-University/openwater/issues
+RoxygenNote: 7.0.2

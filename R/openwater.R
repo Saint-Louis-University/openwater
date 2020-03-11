@@ -1,7 +1,6 @@
 #' OpenWater Get Application Programming Interface
 #'
 #' @param ow_api_key OpenWater API Key
-#' @param ow_api_spec OpenWater API Specification URL
 #' @param ow_domain OpenWater domain
 #'
 #' @return An object representing the OpenWater API operations and schemas
@@ -10,9 +9,8 @@
 #' @examples
 #' \donttest{ow_api <- ow_get_api()}
 ow_get_api <- function(ow_api_key = Sys.getenv("OPENWATER_API_KEY"),
-                       ow_api_spec = Sys.getenv("OPENWATER_API_SPEC"),
                        ow_domain = Sys.getenv("OPENWATER_DOMAIN")) {
-  api <- rapiclient::get_api(ow_api_spec)
+  api <- rapiclient::get_api("https://api.secure-platform.com/swagger/index.html")
   headers <- c("X-ClientKey" = ow_domain, "X-ApiKey" = ow_api_key)
   ow_api <-
     list(
@@ -41,16 +39,16 @@ ow_get_report <- function(reportId, ow_api, sleep = 3, ...) {
     outputFormat = ow_api$schemas$Models.ReportRunner.RunRequest("csv")
   ) %>%
     httr::content() %>%
-    { .[["jobId"]] } -> jobId
-  
+    `[[`("jobId") -> jobId
+
   repeat {
     Sys.sleep(sleep)
     ow_api$operations$GetJobById(id = jobId) %>%
       httr::content() -> response_job_details
-    
+
     if(!(response_job_details$jobState %in% c("Enqueued", "Processing")))
       break
   }
-    
+
   readr::read_csv(response_job_details$resultUrl, ...)
 }
