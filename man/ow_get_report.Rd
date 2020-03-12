@@ -13,7 +13,7 @@ ow_get_report(reportId, ow_api, sleep = 3, ...)
 
 \item{sleep}{The time interval to wait between checking job completion status}
 
-\item{...}{Additional arguments passed to \code{\link[readr]{read_csv}}()}
+\item{...}{Additional arguments passed to \code{\link[readr:read_delim]{read_csv}}()}
 }
 \value{
 A \code{\link[tibble]{tibble}}

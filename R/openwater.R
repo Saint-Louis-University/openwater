@@ -10,7 +10,7 @@
 #' \donttest{ow_api <- ow_get_api()}
 ow_get_api <- function(ow_api_key = Sys.getenv("OPENWATER_API_KEY"),
                        ow_domain = Sys.getenv("OPENWATER_DOMAIN")) {
-  api <- rapiclient::get_api("https://api.secure-platform.com/swagger/index.html")
+  api <- rapiclient::get_api("https://api.secure-platform.com/swagger/v2/swagger.json")
   headers <- c("X-ClientKey" = ow_domain, "X-ApiKey" = ow_api_key)
   ow_api <-
     list(
@@ -26,7 +26,7 @@ ow_get_api <- function(ow_api_key = Sys.getenv("OPENWATER_API_KEY"),
 #' @param reportId ID of the desired report
 #' @param ow_api OpenWater API object
 #' @param sleep The time interval to wait between checking job completion status
-#' @param ... Additional arguments passed to \code{\link[readr]{read_csv}}()
+#' @param ... Additional arguments passed to \code{\link[readr:read_delim]{read_csv}}()
 #'
 #' @return A \code{\link[tibble]{tibble}}
 #' @export
